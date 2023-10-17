@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-export default function Home1() {
+export default function Main() {
   return (
-    <Home1Wrap>
+    <MainWrap>
       <p className="title">
         <span>Remini</span> : 맞춤 회고 유형 추천 및 가이드
       </p>
@@ -14,19 +14,20 @@ export default function Home1() {
         </p>
       </div>
       <button className="font">맞춤 회고 유형 알아보기</button>
-    </Home1Wrap>
+    </MainWrap>
   );
 }
 
-const Home1Wrap = styled.div`
+const MainWrap = styled.div`
   height: 742px;
   //background 피그마 디자인 코드 안 맞음
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 1) 39.37%,
-    rgba(121, 205, 150, 0.3) 100%
+    rgb(121, 200, 150)
   );
   padding-top: 208px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;

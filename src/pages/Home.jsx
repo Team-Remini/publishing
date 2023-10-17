@@ -2,13 +2,17 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Home1 from "../components/Home/Home1";
+import Main from "../components/Home/Main";
+import Importance from "../components/Home/Importance";
+import GoldenCircle from "../components/Home/GoldenCircle";
 
 export default function Home() {
   return (
     <div>
       <Header />
-      <Home1 />
+      <Main />
+      <Importance />
+      <GoldenCircle />
       <Footer />
     </div>
   );
