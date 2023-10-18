@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Main from "../components/Home/Main";
 import Importance from "../components/Home/Importance";
 import GoldenCircle from "../components/Home/GoldenCircle";
+import Sort from "../components/Home/Sort";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Main />
       <Importance />
       <GoldenCircle />
+      <Sort />
       <Footer />
     </div>
   );

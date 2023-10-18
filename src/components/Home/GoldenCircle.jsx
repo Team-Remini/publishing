@@ -10,17 +10,8 @@ export default function GoldenCircle() {
         <img src={logo} alt="logo" />팀 Remini의 Golden Circle
       </div>
       <div className="what">
-        <span>WHAT</span>
-        <img src={vector1} alt="vector1" />
-        <span>
-          우리는 끊임없는 성장을 추구하며 함께 더 나은 자신, 팀이 될 수 있는
-          가치있는 활동을 하고자 합니다.
-        </span>
         <div className="how">
-          <span>HOW</span>
-          <div className="why">
-            <span>WHY</span>
-          </div>
+          <div className="why"></div>
         </div>
       </div>
     </GoldenCircleWrap>
