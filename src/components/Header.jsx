@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import logoBlack from "../img/logo/logo_black.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
+  const navigate = useNavigate();
+
+  const goToLogin = () => {
+    navigate("/login");
+  };
+
   return (
     <HeaderWrap>
       <img src={logoBlack} alt="logo" />
@@ -11,7 +18,7 @@ export default function Header() {
         <p>둘러보기</p>
       </div>
       <div className="login font">
-        <p>로그인</p>
+        <p onClick={goToLogin}>로그인</p>
       </div>
     </HeaderWrap>
   );
