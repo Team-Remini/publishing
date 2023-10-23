@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import SortComponent from "./SortComponent";
+import SortDetailWrap from "./SortDetailWrap";
 
 export default function AAR() {
   return (
-    <SortComponent>
+    <SortDetailWrap>
       <h3 className="title">AAR 회고</h3>
       <div className="text_box">
         <p>
@@ -21,6 +21,6 @@ export default function AAR() {
           <p>목적 (지속, 개선 혹은 포기할 것들은 무엇인가?)</p>
         </span>
       </div>
-    </SortComponent>
+    </SortDetailWrap>
   );
 }

@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 export default function Main() {
+  const navigate = useNavigate();
+
+  const goToRecommend = () => {
+    navigate("/recommend");
+  };
+
   return (
     <MainWrap>
       <p className="title">
@@ -13,7 +20,9 @@ export default function Main() {
           더 나은 자신, 더 나은 팀이 되어 함께 성장해 나갈 수 있도록 합니다.
         </p>
       </div>
-      <button className="font">맞춤 회고 유형 알아보기</button>
+      <button className="font" onClick={goToRecommend}>
+        맞춤 회고 유형 알아보기
+      </button>
     </MainWrap>
   );
 }

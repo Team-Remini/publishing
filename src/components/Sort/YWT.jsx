@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import SortComponent from "./SortComponent";
+import SortDetailWrap from "./SortDetailWrap";
 
 export default function YWT() {
   return (
-    <SortComponent>
+    <SortDetailWrap>
       <h3 className="title">YWT 회고</h3>
       <div className="text_box">
         <p>YWT는 일본 도요타에서 사용한 방식으로 짧게 진행되는 회고예요.</p>
@@ -20,6 +20,6 @@ export default function YWT() {
           </p>
         </span>
       </div>
-    </SortComponent>
+    </SortDetailWrap>
   );
 }

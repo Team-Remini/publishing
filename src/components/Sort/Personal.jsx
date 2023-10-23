@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import SortComponent from "./SortComponent";
+import SortDetailWrap from "./SortDetailWrap";
 
 export default function Personal() {
   return (
-    <SortComponent>
+    <SortDetailWrap>
       <h3 className="title">개인적 회고</h3>
       <div className="text_box">
         <p>
@@ -23,6 +23,6 @@ export default function Personal() {
           <p>삶에서 더 하고 싶은 일은? / 삶에서 덜 하고 싶은 일은?</p>
         </span>
       </div>
-    </SortComponent>
+    </SortDetailWrap>
   );
 }

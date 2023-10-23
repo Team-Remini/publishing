@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import SortComponent from "./SortComponent";
+import SortDetailWrap from "./SortDetailWrap";
 
 export default function ORID() {
   return (
-    <SortComponent>
+    <SortDetailWrap>
       <h3 className="title">ORID 회고</h3>
       <div className="text_box">
         <p>
@@ -32,6 +32,6 @@ export default function ORID() {
           </p>
         </span>
       </div>
-    </SortComponent>
+    </SortDetailWrap>
   );
 }

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import SortComponent from "./SortComponent";
+import SortDetailWrap from "./SortDetailWrap";
 
 export default function FiveF() {
   return (
-    <SortComponent>
+    <SortDetailWrap>
       <h3 className="title">5F 회고</h3>
       <div className="text_box">
         <p>
@@ -19,6 +19,6 @@ export default function FiveF() {
           <p>Feedback (향후 계획에 대한 피드백)</p>
         </span>
       </div>
-    </SortComponent>
+    </SortDetailWrap>
   );
 }

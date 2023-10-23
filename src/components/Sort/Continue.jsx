@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import SortComponent from "./SortComponent";
+import SortDetailWrap from "./SortDetailWrap";
 
 export default function Continue() {
   return (
-    <SortComponent>
+    <SortDetailWrap>
       <h3 className="title">Continue-Stop-Start 회고</h3>
       <div className="text_box">
         <p>
@@ -27,6 +27,6 @@ export default function Continue() {
           회고를 하면서 함께 할 수 있도록 유의해주세요.
         </p>
       </div>
-    </SortComponent>
+    </SortDetailWrap>
   );
 }

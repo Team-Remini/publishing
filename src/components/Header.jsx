@@ -10,9 +10,13 @@ export default function Header() {
     navigate("/login");
   };
 
+  const goToHome = () => {
+    navigate("/");
+  };
+
   return (
     <HeaderWrap>
-      <img src={logoBlack} alt="logo" />
+      <img src={logoBlack} alt="logo" onClick={goToHome} />
       <div className="text-box font">
         <p>회고하기</p>
         <p>둘러보기</p>
@@ -35,6 +39,7 @@ const HeaderWrap = styled.div`
   img {
     width: 162px;
     height: 39px;
+    cursor: pointer;
   }
   .text-box {
     width: 186px;
@@ -56,5 +61,6 @@ const HeaderWrap = styled.div`
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    cursor: pointer;
   }
 `;

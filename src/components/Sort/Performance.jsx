@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import SortComponent from "./SortComponent";
+import SortDetailWrap from "./SortDetailWrap";
 
 export default function Performance() {
   return (
-    <SortComponent>
+    <SortDetailWrap>
       <h3 className="title">성과/수치 중심 회고</h3>
       <div className="text_box">
         <p>
@@ -28,6 +28,6 @@ export default function Performance() {
           <p>이번 교훈을 통해 내년(다음 분기)에는 무엇을 바꿔야 하는가?</p>
         </span>
       </div>
-    </SortComponent>
+    </SortDetailWrap>
   );
 }

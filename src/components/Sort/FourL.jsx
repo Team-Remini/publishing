@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import SortComponent from "./SortComponent";
+import SortDetailWrap from "./SortDetailWrap";
 
 export default function FourL() {
   return (
-    <SortComponent>
+    <SortDetailWrap>
       <h3 className="title">FourL 회고</h3>
       <div className="text_box">
         <p>
@@ -18,6 +18,6 @@ export default function FourL() {
           <p>Longed for (바라는 것)</p>
         </span>
       </div>
-    </SortComponent>
+    </SortDetailWrap>
   );
 }

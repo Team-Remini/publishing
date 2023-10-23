@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import SortComponent from "./SortComponent";
+import SortDetailWrap from "./SortDetailWrap";
 
 export default function TIL() {
   return (
-    <SortComponent>
+    <SortDetailWrap>
       <h3 className="title">TIL 회고</h3>
       <div className="text_box">
         <p>
@@ -19,6 +19,6 @@ export default function TIL() {
           <p>배운 점 (학습 - 오늘의 일에서 나는 어떤 것을 배웠는지)</p>
         </span>
       </div>
-    </SortComponent>
+    </SortDetailWrap>
   );
 }

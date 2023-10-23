@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useAtom } from "jotai";
+import { pageAtom, isCheckedAtoms, resetChecked } from "../atom";
 import styled from "styled-components";
 import Header from "../components/Header";
 import Page1 from "../components/Recommend/Page1";
@@ -9,24 +11,59 @@ import Page3a from "../components/Recommend/Page3a";
 import Page3b from "../components/Recommend/Page3b";
 
 export default function Recommend() {
-  const [isChecked1, setIsChecked1] = useState(false);
-  const [isChecked2, setIsChecked2] = useState(false);
-  const [isChecked3, setIsChecked3] = useState(false);
+  const [page, setPage] = useAtom(pageAtom);
+  const [isChecked, setIsChecked] = useAtom(isCheckedAtoms);
+
+  // 컴포넌트가 마운트될 때 isChecked 상태 초기화
+  useEffect(() => {
+    resetChecked();
+  }, [page]);
+
+  // 체크상태 초기화 함수
+  const resetChecked = () => {
+    setIsChecked(() => [false, false, false]);
+  };
+
+  // 다른 페이지 갔다가 왔을때 페이지1으로
+  useEffect(() => {
+    setPage("Page1");
+  }, []);
 
   // 중복 체크 방지
-  const handleCheckboxChange = (checkboxIndex) => {
-    if (checkboxIndex === 1) {
-      setIsChecked1(!isChecked1);
-      setIsChecked2(false);
-      setIsChecked3(false);
-    } else if (checkboxIndex === 2) {
-      setIsChecked2(!isChecked2);
-      setIsChecked1(false);
-      setIsChecked3(false);
-    } else if (checkboxIndex === 3) {
-      setIsChecked3(!isChecked3);
-      setIsChecked1(false);
-      setIsChecked2(false);
+  const preventDuplication = (checkboxIndex) => {
+    setIsChecked((it) => it.map((a, i) => i === checkboxIndex - 1));
+  };
+
+  // 다음 버튼 클릭 시 페이지 이동 처리
+  const nextPage = () => {
+    switch (page) {
+      case "Page1":
+        if (isChecked[0]) setPage("Page2a");
+        else if (isChecked[1]) setPage("Page2b");
+        else if (isChecked[2]) setPage("Page2c");
+        break;
+      case "Page2a":
+        if (isChecked[0]) setPage();
+        else if (isChecked[1]) setPage();
+        else if (isChecked[2]) setPage();
+        break;
+      case "Page2b":
+        if (isChecked[0]) setPage();
+        else if (isChecked[1]) setPage();
+        break;
+      case "Page2c":
+        if (isChecked[0]) setPage("Page3a");
+        else if (isChecked[1]) setPage("Page3b");
+        break;
+      case "Page3a":
+        if (isChecked[0]) setPage();
+        else if (isChecked[1]) setPage();
+        break;
+      case "Page3b":
+        if (isChecked[0]) setPage();
+        else if (isChecked[1]) setPage();
+        break;
+      default:
     }
   };
 
@@ -35,16 +72,20 @@ export default function Recommend() {
       <Header />
       <RecommendWrap>
         <div className="recommend_title">맞춤 회고 유형 추천</div>
-        <Page3b
-          isChecked1={isChecked1}
-          isChecked2={isChecked2}
-          isChecked3={isChecked3}
-          handleCheckboxChange={handleCheckboxChange}
-        />
+        {page === "Page1" && <Page1 pd={preventDuplication} />}
+        {page === "Page2a" && <Page2a pd={preventDuplication} />}
+        {page === "Page2b" && <Page2b pd={preventDuplication} />}
+        {page === "Page2c" && <Page2c pd={preventDuplication} />}
+        {page === "Page3a" && <Page3a pd={preventDuplication} />}
+        {page === "Page3b" && <Page3b pd={preventDuplication} />}
         <button
           className={`next_btn ${
-            isChecked1 || isChecked2 || isChecked3 ? "active" : ""
+            // isChecked 배열 내에서 하나 이상의 요소가 true인 경우에만 some 메서드가 true를 반환
+            isChecked.some((isChecked) => isChecked) ? "active" : ""
           }`}
+          onClick={nextPage}
+          // 버튼 비활성화(모든 체크박스가 선택되지 않았거나 현재 페이지가 설정되지 않았을 때)
+          disabled={!isChecked.some((isChecked) => isChecked) || !page}
         >
           다음
         </button>
